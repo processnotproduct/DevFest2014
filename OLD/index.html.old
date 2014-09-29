@@ -1,0 +1,114 @@
+<!doctype html>
+
+<html>
+<head>
+  <title>DevFest2014</title>
+
+  <script type="text/javascript">
+    function changeImg(imgNumber)   {
+      var myImages = ["images/bg-01.jpg", "images/bg-02.jpg", "images/bg-03.jpg", "images/bg-04.jpg", "images/bg-05.png", "images/bg-06.jpg", "images/bg-07.png", "images/bg-08.png", "images/bg-09.jpg", "images/bg-10.jpg", "images/bg-11.jpg"];
+      var imgShown = document.body.style.backgroundImage;
+      var newImgNumber =Math.floor(Math.random()*myImages.length);
+      document.body.style.backgroundImage = 'url('+myImages[newImgNumber]+')';
+      }
+    window.onload=changeImg;
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <script src="bower_components/platform/platform.js"></script>
+
+  <link rel="import" href="bower_components/core-icons/core-icons.html">
+  <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+  <link rel="import" href="bower_components/font-roboto/roboto.html">
+  <link rel="import" href="bower_components/paper-button/paper-button.html">
+  <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
+  <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="bower_components/paper-fab/paper-fab.html">
+  <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="bower_components/paper-toast/paper-toast.html">
+  
+  <link rel="import" href="bower_components/paper-menu-button/paper-menu-button.html">
+  <link rel="import" href="bower_components/paper-item/paper-item.html">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg" unresolved touch-action="auto">
+
+  <template is="auto-binding">
+    <core-toolbar>
+      <paper-menu-button icon="menu">
+          <template repeat="{{pastries}}">
+            <paper-item>{{}}</paper-item>
+          </template>
+        </paper-menu-button>
+      <span flex>GDG D.C.</span>
+      <paper-fab icon="add" ONCLICK="window.open('https://plus.google.com/116047476115208123051/about', '_blank');"></paper-fab>
+    </core-toolbar>
+  </template>
+  
+  <!--<core-toolbar class="medium-tall">-->
+  
+  <!--  <paper-icon-button icon="menu"></paper-icon-button>-->
+  <!--  <div flex>DevFest2014</div>-->
+  <!--  <paper-icon-button icon="search"></paper-icon-button>-->
+  <!--  <paper-icon-button icon="more-vert"></paper-icon-button>-->
+    
+  <!--  <div class="bottom fit" horizontal layout>-->
+    
+  <!--    <paper-tabs selected="0" flex style="max-width: 600px;">-->
+    
+  <!--      <paper-tab>ITEM ONE</paper-tab>-->
+  <!--      <paper-tab>ITEM TWO</paper-tab>-->
+  <!--      <paper-tab>ITEM THREE</paper-tab>-->
+        
+  <!--    </paper-tabs>-->
+  <!--    <paper-fab icon="add"></paper-fab>-->
+  <!--  </div>-->
+  
+  <!--</core-toolbar>-->
+
+  <!--<section>-->
+  <!--  <p>A simple Polymer-->
+  <!--    <a href="http://www.polymer-project.org/docs/elements/paper-elements.html">-->
+  <!--    paper elements</a> example that demonstrates using <code>&lt;core-toolbar&gt;,-->
+  <!--    &lt;paper-button&gt;, &lt;paper-checkbox&gt;, &lt;paper-icon-button&gt;,-->
+  <!--    &lt;paper-fab&gt;, &lt;paper-tabs&gt;</code>, and <code>&lt;paper-toast&gt;</code>.-->
+  <!--  </p>-->
+  <!--  <paper-checkbox label="Got it!"></paper-checkbox>-->
+  <!--</section>-->
+
+  <!--<section>-->
+  <!--  <paper-tabs selected="0">-->
+  <!--    <paper-tab>GDG D.C.</paper-tab>-->
+  <!--    <paper-tab>DevFest 2014</paper-tab>-->
+  <!--    <paper-tab>What's Next</paper-tab>-->
+  <!--  </paper-tabs>-->
+  <!--  <p>Lorem ipsum dolor sit amet-->
+  <!--  </p>-->
+  <!--</section>-->
+
+  <!--<section>-->
+  <!--  <template id="toastGroup" is="auto-binding">-->
+  <!--    <paper-button raisedButton right bottom label="Click Me!" on-click="{{showToast}}">-->
+  <!--    </paper-button>-->
+  <!--    <paper-toast id="toast" text="This Will Be Awesome!"></paper-toast>-->
+  <!--  </template>-->
+  <!--</section>-->
+  
+  <!--<script src="main.js"></script>-->
+  
+  <!--<script>-->
+  <!--  scope = document.querySelector('template[is=auto-binding]');-->
+
+  <!--  scope.pastries = [-->
+  <!--    'About',-->
+  <!--    'Schedule'-->
+  <!--  ];-->
+  <!--</script>-->
+  
+</body>
+</html>
