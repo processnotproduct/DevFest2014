@@ -13,8 +13,6 @@ body {
   -webkit-touch-callout: none;
 }
 
-
-
 /*For randomized background of the entire page, not the paralax*/
 .bg {
   background-size: cover;
@@ -23,280 +21,109 @@ body {
   background-position: center center;
 }
 
-
-
-/*Toolbar and Drawer styles*/
-[drawer] {
-  border-right: 1px solid #ccc;
-  background-color: #ddd;
-}
-
-[main] {
-  height: 100%;
-}
-
-core-drawer-panel[narrow] button {
-  display: inline-block
-}
-
-core-toolbar {
-  background-color: #666;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 400;
-}
-
-paper-fab {
-  position: absolute !important;
-  top: 35px;
-  right: 1em;
-  z-index: 1;
-}
-
-
-
-/*Drawer menu items.*/
-core-menu {
-  margin: 0 !important;
-}
-
-.dark {
-  background-color: #ddd;
-}
-
-.dark paper-item {
-  background-color: #bbb;
-  color: #333;
-  fill: #333;
-}
-
-.bottom {
-  background-color: #ddd;
-}
-
-.bottom paper-item {
-  background-color: #666;
-  color: #fff;
-  fill: #fff;
-  position: absolute;
-	bottom: 0;
-	left: 0;
-	margin: 0;
-	width: 100%;
-}
-
-
-
-/*GDG LOGO*/
-.gdglogo {
-  height: 26px;
-  vertical-align: middle;
-  display: inline-block;
-  padding-bottom: 5px;
-}
-
-span {
-  margin-top: 5px !important;
-  font
-}
-
-
-/*Header Boxes*/
-.header-card {
-  position: relative;
-  border-radius: 2px;
-  margin: 2em;
-  padding: 1em;
-  background-image: url(images/clouds.png);
-  background-size: cover;
-}
-
-.card-inner {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  text-align: center;
-  border-radius: 2px;
-
-}
-
-.header-box {
-  width: 100%;
-  text-align: center;
-}
-
-
-
-/*Google Logo Boxes*/
-.logo-card {
-  background: white;
-  width: 200px;
-  height: 200px;
-  position: relative;
-  margin: 2em;
-  padding: 1em;
-  border-radius: 2px;
-  background-size: 180px 180px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.card-inner {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 2px;
-}
-
-.logo-box {
-  width: 100%;
-  text-align: center;
-}
-
-
-
-/*TESTING PARALAX*/
-.parallax [class*="bg__"] {
-  position: relative;
-  height: 50vh;
-  text-indent: -9999px;
-  background-attachment: fixed;
-  background-position: top center;
-  background-size: cover;
-  box-shadow: inset 0 0 1em #111;
-}
-
-.parallax .bg__overlook {
-  background-image: url(images/Overlooking-DC.jpg);
-}
-
-.parallax .bg__metro {
-  background-image: url(images/Washington_DC_Metro_01_gallery.jpg);
-}
-
-
-
-/*.box {*/
-/*  background-color: #eee;*/
-/*  margin: 1em 0 1em;*/
-/*}*/
-/*.dcpic {*/
-/*  display: -webkit-box;*/
-/*  margin-left: auto;*/
-/*  margin-right: auto;*/
+/*:host {*/
+/*  position: absolute;*/
 /*  width: 100%;*/
-/*  opacity: 0.4;*/
+/*  height: 100%;*/
+/*  box-sizing: border-box;*/
 /*}*/
-/*paper-item.1::shadow-root core-icon#icon {*/
-/*  color: blue !important;*/
+/*#core_drawer_panel {*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  right: 0px;*/
+/*  bottom: 0px;*/
+/*  left: 0px;*/
 /*}*/
-/*.parallax [class*="bg__"]:nth-child(2n) {*/
-/*  box-shadow: inset 0 0 1em #111;*/
+/*#section {*/
+/*  box-shadow: rgba(0, 0, 0, 0.0980392) 0px 2px 4px, rgba(0, 0, 0, 0.0980392) 0px 0px 3px;*/
+/*  background-color: rgb(204, 204, 204);*/
 /*}*/
-/*.parallax .bg__overlook, .parallax .bg__bazz {*/
-/*  height: 100vh;*/
+/*#section1 {*/
+/*  height: 100%;*/
+/*  box-sizing: border-box;*/
+/*  background-color: rgb(221, 221, 221);*/
 /*}*/
-/*.parallax .bg__baz {*/
-/*  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30354/parallax3.jpg);*/
+/*#core_toolbar {*/
+/*  right: 0px;*/
+/*  left: 0px;*/
+/*  color: rgb(255, 255, 255);*/
+/*  fill: rgb(255, 255, 255);*/
+/*  top: 0px;*/
+/*  position: absolute;*/
+/*  background-color: rgb(119, 119, 119);*/
 /*}*/
-/*.parallax .bg__bazz {*/
-/*  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30354/parallax1.jpg);*/
+/*#core_toolbar1 {*/
+/*  right: 0px;*/
+/*  left: 0px;*/
+/*  color: rgb(255, 255, 255);*/
+/*  fill: rgb(255, 255, 255);*/
+/*  top: 0px;*/
+/*  position: absolute;*/
+/*  background-color: rgb(119, 119, 119);*/
 /*}*/
-/*.parallax .bg__break {*/
-/*  box-shadow: inset 0 0 1em #111;*/
-/*  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30354/parallax1.jpg);*/
-/*}*/
-/*.parallax .capture {*/
-/*  float: right;*/
-/*  width: 200px;*/
-/*  padding: 1em;*/
-/*  margin: -1.5em 1em 0 0;*/
-/*  text-indent: 0;*/
-/*  background: rgba(243, 243, 243, 0.75);*/
-/*  box-shadow: 0 1px 0.125em #333;*/
-/*}*/
-/*article .container {*/
-/*  width: 600px;*/
-/*  margin: 0 auto;*/
-/*}*/
-/*article header {*/
-/*  position: relative;*/
-/*  margin: -5em 0 0 0;*/
-/*  padding: 1em;*/
-/*  text-align: left;*/
-/*  font-size: 2em;*/
-/*  color: #333;*/
-/*  background-color: rgba(255, 255, 255, 0.75);*/
-/*}*/
-/*article h1, article h2 {*/
-/*  margin: 0 0 0.333em;*/
-/*}*/
-/*article section {*/
-/*  padding: 3em;*/
-/*}*/
-/*article section.parallax {*/
-/*  margin: 0;*/
-/*  padding: 0;*/
-/*}*/
-/*a, a:visited, a:active {*/
-/*  color: #f66;*/
-/*}*/
-/*.flex-container {*/
-/*  background-color: #eee;*/
-/*  padding: 2em;*/
-/*  margin: 2em;*/
-/*  list-style: none;*/
-/*  display: -webkit-box;*/
-/*  display: -moz-box;*/
-/*  display: -ms-flexbox;*/
-/*  display: -webkit-flex;*/
-/*  display: flex;*/
-/*  -webkit-flex-flow: row wrap;*/
-/*  justify-content: space-around;*/
-/*}*/
-/*.flex-item {*/
-/*  padding: 5px;*/
-/*  width: 200px;*/
-/*  height: 200px;*/
-/*  margin-top: 10px;*/
-/*  line-height: 150px;*/
-/*  color: white;*/
-/*  font-weight: bold;*/
-/*  font-size: 3em;*/
-/*  text-align: center;*/
-/*}*/
-/*paper-button {*/
-/*  margin: 0.5em 1em 0.5em 0;*/
-/*  width: 10em;*/
-/*}*/
-/*paper-button[right] {*/
-/*  position: fixed;*/
-/*  right: 0;*/
-/*}*/
-/*section {*/
-/*  margin: 0;*/
-/*}*/
-/*button {*/
-/*  display: none;*/
-/*  width: 160px;*/
-/*  height: 40px;*/
+/*#core_menu {*/
 /*  font-size: 16px;*/
-/*  margin: 8px;*/
+/*  left: 1110px;*/
+/*  top: 470px;*/
 /*}*/
-/*a, a:hover {*/
-/*  text-decoration: none;*/
+/*#core_item {*/
+/*  left: 1120px;*/
+/*  top: 400px;*/
 /*}*/
-/*paper-checkbox {*/
-/*  margin-left: 1em;*/
+/*#core_menu_button {*/
+/*  left: 1170px;*/
+/*  top: 440px;*/
 /*}*/
-/*paper-tabs {*/
-/*  background-color: #5677fc;*/
-/*  color: #fff;*/
+/*#div2 {*/
+/*  left: 1220px;*/
+/*  top: 440px;*/
 /*}*/
-/*paper-tabs[noink][nobar] paper-tab.core-selected {*/
-/*  color: #ffff8d;*/
+/*#topeka_app {*/
+/*  width: 300px;*/
+/*  height: 300px;*/
+/*  min-height: 450px;*/
+/*  left: 1210px;*/
+/*  top: 350px;*/
+/*}*/
+/*#section2 {*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  border: 5px solid rgb(204, 204, 204);*/
+/*  left: 0px;*/
+/*  top: 64px;*/
+/*  position: absolute;*/
+/*}*/
+/*#paper_tabs1 {*/
+/*  color: rgb(255, 255, 255);*/
+/*  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 2px;*/
+/*  background-color: rgb(0, 188, 212);*/
+/*}*/
+/*#paper_fab {*/
+/*  top: 35px;*/
+/*  position: absolute;*/
+/*  right: 1em;*/
+/*  z-index: 1;*/
+/*}*/
+/*#paper_item {*/
+/*  left: 0px;*/
+/*  top: 160px;*/
+/*  position: absolute;*/
+/*  width: 100%;*/
+/*  height: 50px;*/
+/*  background-color: rgb(209, 209, 209);*/
+/*}*/
+/*#paper_item1 {*/
+/*  top: 80px;*/
+/*  background-color: rgb(194, 194, 194);*/
+/*}*/
+/*#paper_item2 {*/
+/*  top: 90px;*/
+/*  background-color: rgb(194, 194, 194);*/
+/*}*/
+/*#paper_item3 {*/
+/*  left: 0px;*/
+/*  position: absolute;*/
+/*  width: 100%;*/
+/*  bottom: 0px !important;*/
+/*  background-color: rgb(119, 119, 119);*/
 /*}*/

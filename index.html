@@ -3,9 +3,11 @@
   <head>
     <title>GDG D.C.</title>
 
+    <!--SCRIPT FOR BACKGROUND-->
     <script type="text/javascript">
       function changeImg(imgNumber)   {
-        var myImages = ["images/bg-01.jpg", "images/bg-02.jpg", "images/bg-03.jpg", "images/bg-04.jpg", "images/bg-05.png", "images/bg-06.jpg", "images/bg-07.png", "images/bg-08.png", "images/bg-09.jpg", "images/bg-10.jpg", "images/bg-11.jpg",];
+        var myImages = ["images/bg-01.jpg",
+        "images/bg-02.jpg", "images/bg-03.jpg", "images/bg-04.jpg", "images/bg-05.png", "images/bg-06.jpg", "images/bg-07.png", "images/bg-08.png", "images/bg-09.jpg", "images/bg-10.jpg", "images/bg-11.jpg",];
         var imgShown = document.body.style.backgroundImage;
         var newImgNumber = Math.floor(Math.random()*myImages.length);
         document.body.style.backgroundImage = 'url('+myImages[newImgNumber]+')';
@@ -13,346 +15,239 @@
       window.onload=changeImg;
     </script>
 
+    <!--META-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
+    <!--POLYMER PLATFORM-->
     <script src="bower_components/platform/platform.js"></script>
 
-    <link rel="import" href="bower_components/polymer/polymer.html">
-    <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
-    <link rel="import" href="bower_components/core-drawer-panel/core-drawer-panel.html">
-    <link rel="import" href="bower_components/core-overlay/core-overlay.html">
-    <link rel="import" href="bower_components/core-icons/core-icons.html">
-    <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
-    <link rel="import" href="bower_components/core-menu/core-menu.html">
-    <link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
+    <!--CORE-->
+    <link rel="import" href="../core-scaffold/core-scaffold.html">
+    <link rel="import" href="../core-header-panel/core-header-panel.html">
+    <link rel="import" href="../core-menu/core-menu.html">
+    <link rel="import" href="../core-item/core-item.html">
+    <link rel="import" href="../core-icon-button/core-icon-button.html">
+    <link rel="import" href="../core-toolbar/core-toolbar.html">
+    <link rel="import" href="../core-menu/core-submenu.html">
 
-    <link rel="import" href="bower_components/paper-button/paper-button.html">
-    <link rel="import" href="bower_components/paper-item/paper-item.html">
-    <link rel="import" href="bower_components/paper-menu-button/paper-menu-button.html">
-    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
-    <link rel="import" href="bower_components/paper-fab/paper-fab.html">
-    <link rel="import" href="bower_components/paper-item/paper-item.html">
-    <link rel="import" href="bower_components/paper-ripple/paper-ripple.html">
-    <link rel="import" href="bower_components/paper-shadow/paper-shadow.html">
+    <!--PAPER-->
+    <link rel="import" href="../paper-item/paper-item.html">
+    <link rel="import" href="../paper-fab/paper-fab.html">
 
-    <link rel="import" href="bower_components/polymer-ui-card/polymer-ui-card.html">
-
+    <!--FONTS-->
     <link rel="import" href="bower_components/font-roboto/roboto.html">
 
+    <!--CSS-->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="bower_components/paper-shadow/paper-shadow.css">
 
   </head>
 
   <body unresolved class="bg" touch-action="auto">
+    <polymer-element name="my-element">
+      <template>
+        <style>
+          :host {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+          }
+          #core_scaffold {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+          }
+          /*#core_header_panel {*/
+          /*  background-color: #F21B1B !important;*/
+          /*}*/
+          #core_toolbar {
+            color: rgb(255, 255, 255);
+            background-color: #666;;
+          }
+          #core_menu {
+            font-size: 16px;
+            margin:0;
+          }
+          #paper_item1 {
+            /*top: 80px;*/
+            width: 100%;
+            background-color: rgb(194, 194, 194);
+            margin: 1em 0 1em 0;
+          }
+          #paper_item2 {
+            /*top: 90px;*/
+            width: 100%;
+            background-color: rgb(194, 194, 194);
+            margin: 1em 0 1em 0;
+          }
+          #paper_item3 {
+            left: 0px;
+            position: absolute;
+            width: 100%;
+            bottom: 0px !important;
+            background-color: #666;
+          }
+          /*CUSTOM STYLES*/
+          .gdglogo {
+            height: 26px;
+            vertical-align: middle;
+            display: inline-block;
+            padding-bottom: 5px;
+          }
+          /*Header Boxes*/
+          .header-card {
+            position: relative;
+            border-radius: 2px;
+            margin: 2em;
+            padding: 1em;
+            background-image: url(images/clouds.png);
+            background-size: cover;
+            background-position: center;
 
-    <core-drawer-panel>
+          }
+          .card-inner {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+            border-radius: 2px;
+          }
+          .header-box {
+            width: 100%;
+            text-align: center;
+          }
+          /*Google Logo Boxes*/
+          .logo-card {
+            background: white;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            margin: 0 auto;
+            padding: 1em;
+            border-radius: 2px;
+            background-size: 180px 180px;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+          .card-inner {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 2px;
+          }
+          .logo-box {
+            width: 100%;
+            display: inline-flex;
+            margin-bottom: 2em;
+          }
+          /*PARALAX*/
+          .parallax [class*="bg__"] {
+            position: relative;
+            height: 50vh;
+            text-indent: -9999px;
+            background-attachment: fixed;
+            background-position: top center;
+            background-size: cover;
+            box-shadow: inset 0 0 1em #111;
+            margin-bottom: 2em;
+          }
+          .parallax .bg__overlook {
+            background-image: url(images/Overlooking-DC.jpg);
+          }
+          .parallax .bg__metro {
+            background-image: url(images/Washington_DC_Metro_01_gallery.jpg);
+          }
+          #logo {
+            margin-top: 5px !important;
+          }
+        </style>
 
-      <core-header-panel drawer>
+        <core-scaffold id="core_scaffold">
 
-        <core-toolbar>
-          <paper-icon-button icon="menu" onclick="document.querySelector('core-drawer-panel').togglePanel();"></paper-icon-button>
-          <span flex style="font-weight: 300;"><img src="images/GDGredblue.png" class="gdglogo"> GDG D.C. <img src="images/GDGgreenyellow.png" class="gdglogo"></span>
-        </core-toolbar>
-
-          <section class="dark">
-            <core-menu selected="0">
-              </br>
-              <paper-item icon="account-box" label="Coming Soon"></paper-item>
-              </br>
-              <paper-item icon="favorite" label="Coming Soon"></paper-item>
-              </br>
+          <core-header-panel mode="standard" id="core_header_panel" navigation flex>
+            <core-toolbar id="core_toolbar">Menu</core-toolbar>
+            <core-menu valueattr="label" id="core_menu" theme="core-light-theme">
+              <paper-item icon="account-box" label="Coming Soon" id="paper_item1" horizontal layout center></paper-item>
+              <paper-item icon="favorite" label="Coming Soon" id="paper_item2" horizontal layout center></paper-item>
+              <paper-item icon="settings" label="Coming Soon" id="paper_item3" horizontal layout center></paper-item>
             </core-menu>
-          </section>
+          </core-header-panel>
 
-          <section class="bottom">
-            <core-menu selected="0">
-              <paper-item icon="settings" label="Coming Soon"></paper-item>
-            </core-menu>
-          </section>
+          <div id="logo" tool><img src="images/GDGredblue.png" class="gdglogo"> GDG D.C. <img src="images/GDGgreenyellow.png" class="gdglogo"></div>
 
-      </core-header-panel>
-
-      <core-header-panel main>
-
-        <core-toolbar>
-          <paper-icon-button icon="menu" onclick="document.querySelector('core-drawer-panel').togglePanel();"></paper-icon-button>
-          <span flex style="font-weight: 300;"><img src="images/GDGredblue.png" class="gdglogo"> GDG D.C. <img src="images/GDGgreenyellow.png" class="gdglogo"></span>
-          <paper-fab icon="google-plus" onclick="window.open('https://plus.google.com/116047476115208123051/about', '_blank');"></paper-fab>
-        </core-toolbar>
-
-        <section>
-          <polymer-element name="header-card" attributes="z">
-            <template>
-              <style>
-                :host {
-                  display: inline-block;
-                }
-              </style>
-              <paper-shadow z="{{z}}">
+          <div class="header-box">
+            <div class="header-card" z="2">
+              <paper-shadow>
                 <h1 style="font-weight: 300;">GDG D.C. is proud to annouce:</h1>
                 <h1 style="font-weight: 400;">DevFest D.C. 2014</h1>
                 <h2 style="font-weight: 400;">Nov 7th 9:00 AM<br>@AOL - Dulles, VA</h2>
                 <h2 style="font-weight: 400;"></h2>
                 <h3 style="font-weight: 300;">Stay tuned for more details and news!</h3>
               </paper-shadow>
-            </template>
-            <script>
-              Polymer('header-card', {
-                publish: {
-                  z: {value: 1, reflect: true}
-                }
-              });
-            </script>
-          </polymer-element>
-          <div class="header-box">
-            <header-card class="header-card" z="2"></header-card>
+            </div>
           </div>
-        </section>
 
-        <section class="parallax">
-          <div class="bg__overlook"></div>
-        </section>
+          <section class="parallax">
+            <div class="bg__overlook"></div>
+          </section>
 
-        <section>
-          <polymer-element name="x-card" attributes="z">
-            <template>
-              <style>
-                :host {
-                  display: inline-block;
-                }
-              </style>
-              <paper-shadow z="{{z}}"></paper-shadow>
-            </template>
-            <script>
-              Polymer('x-card', {
-                publish: {
-                  z: {value: 1, reflect: true}
-                }
-              });
-            </script>
-          </polymer-element>
-          <div class="logo-box">
-            <x-card class="logo-card" z="2" style="background-image: url('images/Android-logo.png');"></x-card>
-            <x-card class="logo-card" z="2" style="background-image: url('images/gcp-live-logo.png');"></x-card>
-            <x-card class="logo-card" z="2" style="background-image: url('images/products-googleglass.png');"></x-card>
-            <x-card class="logo-card" z="2" style="background-image: url('images/Chrome-logo.png');"></x-card>
-          </div>
-        </section>
+          <section class="logo-box">
+              <div class="logo-card" z="2" style="background-image: url('images/Android-logo.png');">
+                <paper-shadow></paper-shadow>
+              </div>
+              <div class="logo-card" z="2" style="background-image: url('images/gcp-live-logo.png');">
+                <paper-shadow></paper-shadow>
+              </div>
+              <div class="logo-card" z="2" style="background-image: url('images/products-googleglass.png');">
+                <paper-shadow></paper-shadow>
+              </div>
+              <div class="logo-card" z="2" style="background-image: url('images/Chrome-logo.png');">
+                <paper-shadow></paper-shadow>
+              </div>
+          </section>
 
-        <section class="parallax">
-          <div class="bg__metro"></div>
-        </section>
+          <section class="parallax">
+            <div class="bg__metro"></div>
+          </section>
 
-        <section>
-        <polymer-element name="music-demo">
-        <template>
+          <section class="logo-box">
+              <div class="logo-card" z="2" style="background-image: url('images/antonio.jpg');">
+                <paper-shadow></paper-shadow>
+              </div>
+              <div class="logo-card" z="2" style="background-image: url('images/chida.jpg');">
+                <paper-shadow></paper-shadow>
+              </div>
+              <div class="logo-card" z="2" style="background-image: url('images/tyson.jpg');">
+                <paper-shadow></paper-shadow>
+              </div>
+              <div class="logo-card" z="2" style="background-image: url('images/babs.jpg');">
+                <paper-shadow></paper-shadow>
+              </div>
+          </section>
 
-          <style>
-            .diff {
-              position: absolute;
-              /*top: 275px;*/
-              right: 0;
-              left: 0;
-              text-align: center;
-              background-color: white;
-              margin: 2em;
-              padding: 2em;
-              border-radius: 2px;
-            }
+        </core-scaffold>
+      </template>
 
-            .differ {
-              position: absolute;
-              /*top: 275px;*/
-              right: 0;
-              left: 0;
-              text-align: center;
-              background-color: white;
-              margin: 2em;
-              padding: 2em;
-              border-radius: 2px;
-            }
+      <script>
 
-            .chip-container {
-              position: absolute;
-              /*top: 275px;*/
-              right: 0;
-              left: 0;
-              text-align: center;
-              background-color: white;
-              margin: 2em;
-              padding: 2em;
-              border-radius: 2px;
-            }
+        Polymer({
 
-            .chip {
-              display: inline-block;
-              position: relative;
-              border-radius: 3px;
-              margin: 20px;
-              overflow: hidden;
-              text-align: start;
-              background-color: #fff;
-              box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
-            }
+        });
 
-            .chip-img {
-              width: 200px;
-              height: 180px;
-            }
+      </script>
 
-            .chip-top {
-              width: 200px;
-              height: 20px;
-            }
+    </polymer-element>
 
-            .chip-bottom {
-              padding: 8px;
-              line-height: 1.5;
-            }
-
-            .chip-album-title {
-              font-weight: bold;
-            }
-
-            /*#details {*/
-            /*  padding: 10px 10% 0;*/
-            /*}*/
-
-            .card {
-              height: 308px;
-              border-radius: 3px;
-              text-align: start;
-              overflow: hidden;
-              background: #fff;
-              box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            }
-
-            .card-img {
-              width: 308px;
-              height: 278px;
-            }
-
-            .card-left {
-              width: 308px;
-              height: 30px;
-            }
-
-            .card-right {
-              padding: 24px;
-            }
-
-            .card-icon {
-              border-radius: 50%;
-              width: 60px;
-              height: 60px;
-              margin-right: 16px;
-            }
-
-            .card-album-title {
-              font-size: 2em;
-            }
-          </style>
-
-          <core-animated-pages class="main" selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
-
-            <section>
-              <polymer-element class="chip-container" >
-                <template repeat="{{items as item}}">
-                  <paper-shadow z="2">
-                    <div z="2" class="chip" hero-id="{{item.artist}}-{{item.album}}" hero?="{{selectedAlbum === item }}" hero-p on-tap="{{transition}}">
-                      <div hero-id="{{item.artist}}-{{item.album}}-art" hero?="{{selectedAlbum === item}}">
-                        <div class="chip-img" style="background-image: url{{item.img}}; background-repeat: no-repeat; background-size: cover;"></div>
-                        <div class="chip-top" style="background:{{item.color}};"></div>
-                      </div>
-                      <div class="chip-bottom">
-                        <div class="chip-album-title">{{item.album}}</div>
-                        <div class="chip-artist">{{item.artist}}</div>
-                      </div>
-                    </div>
-                  </paper-shadow>
-                </template>
-                <!--<script>-->
-                <!--  Polymer('x-card', {-->
-                <!--    publish: {-->
-                <!--      z: {value: 5, reflect: true}-->
-                <!--    }-->
-                <!--  });-->
-                <!--</script>-->
-              </polymer-element>
-            </section>
-
-            <section id="details">
-              <polymer-element class="chip-container">
-                <paper-shadow z="2">
-                  <div z="2" class="card" layout horizontal hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}" hero on-tap="{{transition}}">
-                    <div hero-id="{{selectedAlbum.artist}}-{{selectedAlbum.album}}-art" hero>
-                      <div class="card-img" style="background-image: url{{selectedAlbum.img}}; background-repeat: no-repeat; background-size: cover;"></div>
-                      <div class="card-left" style="background:{{selectedAlbum.color}};"></div>
-                    </div>
-                    <div class="card-right" flex>
-                      <div layout horizontal center>
-                        <div>
-                          <div class="card-icon" style="background:{{selectedAlbum.color}};"></div>
-                        </div>
-                        <div flex>
-                          <div class="card-album-title">{{selectedAlbum.album}}</div>
-                          <div class="card-album-artist">{{selectedAlbum.artist}}</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </paper-shadow>
-                <!--<script>-->
-                <!--  Polymer('y-card', {-->
-                <!--    publish: {-->
-                <!--      z: {value: 2, reflect: true}-->
-                <!--    }-->
-                <!--  });-->
-                <!--</script>-->
-              </polymer-element>
-            </section>
-
-          </core-animated-pages>
-
-        </template>
-        <script>
-
-          Polymer('music-demo', {
-
-            page: 0,
-
-            items: [
-              { album: 'Antonio', artist: 'Wearables', color: '#d50f25', img: '("./images/antonio.jpg")' },
-              { album: 'Chida', artist: 'Cloud', color: '#3369e8', img: '("./images/chida.jpg")' },
-              { album: 'Tyson', artist: 'UI/UX', color: '#009939', img: '("./images/tyson.jpg")' },
-              { album: 'Babs', artist: 'Social', color: '#eeb211', img: '("./images/babs.jpg")' },
-            ],
-
-            selectedAlbum: null,
-
-            transition: function(e) {
-              if (this.page === 0 && e.target.templateInstance.model.item) {
-                this.selectedAlbum = e.target.templateInstance.model.item;
-                this.page = 1;
-              } else {
-                this.page = 0;
-              }
-            }
-          });
-
-        </script>
-        </polymer-element>
-
-        <music-demo></music-demo>
-        </section>
-
-      </core-header-panel>
-
-    </core-drawer-panel>
+    <my-element></my-element>
 
   </body>
 </html>
